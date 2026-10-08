@@ -20,3 +20,15 @@
 | WarpAR10P | [warpAR10P.mat](https://raw.githubusercontent.com/jundongl/scikit-feature/master/skfeature/data/warpAR10P.mat) | |
 
 数据集索引：[ASU Feature Selection Datasets](https://jundongl.github.io/scikit-feature/datasets.html)。
+
+## CLL_SUB_111 聚类实验
+
+实验代码按职责拆分在 [`CLL_SUB_111/`](CLL_SUB_111/)：`dataset.py` 负责数据加载与预处理，`metrics.py` 计算聚类指标，`kernels.py` 构造核子空间，`graph.py` 更新图与图拉普拉斯，`model.py` 实现 WSGL，`experiment.py` 运行 K-means/WSGL 并写出汇总结果。
+
+已有结果保存在 [`CLL_SUB_111/CLL_SUB_111_results.csv`](CLL_SUB_111/CLL_SUB_111_results.csv)。从包含 `WSGL_dataset` 目录的工作区根目录运行：
+
+```powershell
+D:/Miniconda3/python.exe -m WSGL_dataset.CLL_SUB_111
+```
+
+可通过 `--data`、`--output`、`--runs`、`--seed`、`--subspaces`、`--partitions`、`--neighbors`、`--mu` 和 `--max-iterations` 覆盖默认配置。
